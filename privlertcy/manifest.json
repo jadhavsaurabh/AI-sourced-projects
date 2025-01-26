@@ -1,0 +1,41 @@
+{
+    "manifest_version": 3,
+    "name": "AI Privacy and Security Alert",
+    "description": "An extension that analyzes privacy risks and provides real-time alerts.",
+    "version": "1.0",
+    "permissions": [
+      "activeTab",
+      "storage",
+      "cookies",
+      "webNavigation",
+      "scripting"
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"]
+      }
+    ],
+    "host_permissions": [
+      "https://*/*",
+      "http://*/*",
+      "https://api.openai.com/*"
+    ],
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "16": "icons/icon.jpeg",
+        "48": "icons/icon.jpeg",
+        "128": "icons/icon.jpeg"
+      }
+    },
+    "icons": {
+      "16": "icons/icon.jpeg",
+      "48": "icons/icon.jpeg",
+      "128": "icons/icon.jpeg"
+    }
+  }
+  
